@@ -1,7 +1,7 @@
 start :-
-    write('Good day! I am Dr.Bot.'),
+    write('Hello! I am Dr.Bot, your medical chatbot.'),
     nl,
     write('What is your name? '),
-    read(X),
-    format('Hi, ~w!', [X]).
+    read(Name), nl,
+    format('Hi, ~w!~n', [Name]).
 
