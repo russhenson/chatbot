@@ -11,7 +11,7 @@ disease(tuberculosis).
 disease(rabies).
 disease(cholera).
 disease(athletes_foot).
-disease(hepatits_a).
+disease(hepatitis_a).
 disease(hepatitis_b).
 
 %cause of malaria
@@ -34,7 +34,21 @@ cause(asthma, exercised).
 cause(asthma, heartburn).
 
 %causes of tuberculosis
-cause(tuberculosis, bitten_by_rabid_animal).
+cause(tuberculosis, smoking).
+cause(tuberculosis, exposed_to_tb).
+
+%causes of measles
+cause(measles, exposed_to_measles).
+
+%causes of rabies
+cause(rabies, bitten_by_rabid_animal).
+
+%causes of hepatitis a
+cause(hepatitis_a, contaminated_food).
+cause(hepatitis_a, contaminated_water).
+
+%causes of hepatitis b
+cause(hepatitis_b, hepa_b_infected_contact).
 
 %list of symptoms of malaria
 symptom(malaria, shaking_chills).
