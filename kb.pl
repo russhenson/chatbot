@@ -14,7 +14,29 @@ disease(athletes_foot).
 disease(hepatits_a).
 disease(hepatitis_b).
 
+%cause of malaria
+cause(malaria, mosquite_bite).
 
+%cause of dengue fever
+cause(dengue_fever, mosquito_bite).
+
+%causes of leptospirosis
+cause(leptospirosis, open_wound).
+cause(leptospirosis, animal_urine).
+cause(leptospirosis, contaminated_water).
+cause(leptospirosis, contaminated_flood).
+cause(leptospirosis, contaminated_soil).
+
+%causes of asthma
+cause(asthma, allergies).
+cause(asthma, smoking).
+cause(asthma, exercised).
+cause(asthma, heartburn).
+
+%causes of tuberculosis
+cause(tuberculosis, bitten_by_rabid_animal).
+
+%list of symptoms of malaria
 symptom(malaria, shaking_chills).
 symptom(malaria, high_fever).
 symptom(malaria, profuse_sweating).
@@ -22,6 +44,7 @@ symptom(malaria, headache).
 symptom(malaria, nausea).
 symptom(malaria, vomiting).
 
+%list of symptoms of dengue fever
 symptom(dengue_fever, high_fever).
 symptom(dengue_fever, headache).
 symptom(dengue_fever, swollen_lymph_glands).
@@ -33,10 +56,13 @@ symptom(dengue_fever, vomiting).
 symptom(dengue_fever, bleeding_nose_and_gums).
 symptom(dengue_fever, bruising_on_skin).
 
+%list of symptoms of chickenpox
 symptom(chickenpox, red_bumps).
 symptom(chickenpox, blisters).
 symptom(chickenpox, scabs).
+symptom(chickenpox, itchy_skin).
 
+%list of symptoms of leptospirosis
 symptom(leptospirosis, high_fever).
 symptom(leptospirosis, headache).
 symptom(leptospirosis, chills).
@@ -48,11 +74,13 @@ symptom(leptospirosis, abdominal_pain).
 symptom(leptospirosis, diarrhea).
 symptom(leptospirosis, skin_rash).
 
+%list of symptoms of asthma
 symptom(asthma, shortness_of_breath).
 symptom(asthma, chest_pain).
 symptom(asthma, coughing).
 symptom(asthma, wheezing).
 
+%list of symptoms of influenza
 symptom(influenza, high_fever).
 symptom(influenza, headache).
 symptom(influenza, muscle_pain).
@@ -66,6 +94,7 @@ symptom(influenza, nausea).
 symptom(influenza, vomiting).
 symptom(influenza, diarrhea).
 
+%list of symptoms of pneumonia
 symptom(pneumonia, chest_pain).
 symptom(pneumonia, confusion).
 symptom(pneumonia, coughing).
@@ -77,6 +106,7 @@ symptom(pneumonia, vomiting).
 symptom(pneumonia, diarrhea).
 symptom(pneumonia, shortness_of_breath).
 
+%list of symptoms of measles
 symptom(measles, fever).
 symptom(measles, dry_cough).
 symptom(measles, runny_nose).
@@ -85,6 +115,7 @@ symptom(measles, inflamed_eyes).
 symptom(measles, kopliks_spots).
 symptom(measles, skin_rash).
 
+%list of symptoms of sore_eyes
 symptom(sore_eyes, red_eyes).
 symptom(sore_eyes, stinging_eyes).
 symptom(sore_eyes, itchy_eyes).
@@ -94,6 +125,7 @@ symptom(sore_eyes, photophobia).
 symptom(sore_eyes, discharge_from_eye).
 symptom(sore_eyes, foreign_body_sensation).
 
+%list of symptoms of tuberculosis
 symptom(tuberculosis, coughing).
 symptom(tuberculosis, weight_loss).
 symptom(tuberculosis, loss_of_appetite).
@@ -102,6 +134,7 @@ symptom(tuberculosis, fatigue).
 symptom(tuberculosis, fever).
 symptom(tuberculosis, night_sweats).
 
+%list of symptoms of rabies
 symptom(rabies, fever).
 symptom(rabies, headache).
 symptom(rabies, nausea).
@@ -117,6 +150,7 @@ symptom(rabies, hallucinations).
 symptom(rabies, insomnia).
 symptom(rabies, partial_paralysis).
 
+%list of symptoms of cholera
 symptom(cholera, diarrhea).
 symptom(cholera, vomiting).
 symptom(cholera, rapid_dehydration).
@@ -131,18 +165,21 @@ symptom(cholera, fever).
 symptom(cholera, lethargy).
 symptom(cholera, seizures).
 
+%list of symptoms of athlete's foot
 symptom(athletes_foot, red_rash_between_toes).
 symptom(athletes_foot, itchy_feet).
 symptom(athletes_foot, blisters).
 symptom(athletes_foot, dryness).
 symptom(athletes_foot, scaling).
 
+%list of symptoms of hepatitis a
 symptom(hepatitis_a, fatigue).
 symptom(hepatitis_a, low_appetite).
 symptom(hepatitis_a, stomach_pain).
 symptom(hepatitis_a, nausea).
 symptom(hepatitis_a, yellow_skin).
 
+%list of symptoms of hepatitis b
 symptom(hepatitis_b, yellow_skin).
 symptom(hepatitis_b, light_colored_poop).
 symptom(hepatitis_b, fever).

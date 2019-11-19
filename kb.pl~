@@ -11,8 +11,26 @@ disease(tuberculosis).
 disease(rabies).
 disease(cholera).
 disease(athletes_foot).
-disease(heat_stroke).
-disease(hepatitis).
+disease(hepatits_a).
+disease(hepatitis_b).
+
+%cause of malaria
+cause(malaria, mosquite_bite).
+
+%cause of dengue fever
+cause(dengue_fever, mosquito_bite).
+
+%causes of leptospirosis
+cause(leptospirosis, open_wound).
+cause(leptospirosis, animal_urine).
+cause(leptospirosis, contaminated_water).
+cause(leptospirosis, contaminated_flood).
+cause(leptospirosis, contaminated_soil).
+cause(asthma, allergies).
+cause(asthma, smoking).
+cause(asthma, exercised).
+cause(asthma, heartburn).
+cause(tuberculosis, bitten_by_rabid_animal).
 
 
 symptom(malaria, shaking_chills).
@@ -36,6 +54,8 @@ symptom(dengue_fever, bruising_on_skin).
 symptom(chickenpox, red_bumps).
 symptom(chickenpox, blisters).
 symptom(chickenpox, scabs).
+symptom(chickenpox, itchy_skin).
+
 
 symptom(leptospirosis, high_fever).
 symptom(leptospirosis, headache).
@@ -101,6 +121,60 @@ symptom(tuberculosis, coughing_with_blood).
 symptom(tuberculosis, fatigue).
 symptom(tuberculosis, fever).
 symptom(tuberculosis, night_sweats).
+
+symptom(rabies, fever).
+symptom(rabies, headache).
+symptom(rabies, nausea).
+symptom(rabies, vomiting).
+symptom(rabies, agitation).
+symptom(rabies, anxiety).
+symptom(rabies, confusion).
+symptom(rabies, hyperactivity).
+symptom(rabies, difficulty_swallowing).
+symptom(rabies, excessive_salivation).
+symptom(rabies, fear_from_drinking_fluids).
+symptom(rabies, hallucinations).
+symptom(rabies, insomnia).
+symptom(rabies, partial_paralysis).
+
+symptom(cholera, diarrhea).
+symptom(cholera, vomiting).
+symptom(cholera, rapid_dehydration).
+symptom(cholera, dry_tongue).
+symptom(cholera, thirsty).
+symptom(cholera, blood_pressure_falls).
+symptom(cholera, faint_pulse).
+symptom(cholera, muscular_cramps).
+symptom(cholera, hollow_and_sunken_eyes).
+symptom(cholera, wrinkled_skin).
+symptom(cholera, fever).
+symptom(cholera, lethargy).
+symptom(cholera, seizures).
+
+symptom(athletes_foot, red_rash_between_toes).
+symptom(athletes_foot, itchy_feet).
+symptom(athletes_foot, blisters).
+symptom(athletes_foot, dryness).
+symptom(athletes_foot, scaling).
+
+symptom(hepatitis_a, fatigue).
+symptom(hepatitis_a, low_appetite).
+symptom(hepatitis_a, stomach_pain).
+symptom(hepatitis_a, nausea).
+symptom(hepatitis_a, yellow_skin).
+
+symptom(hepatitis_b, yellow_skin).
+symptom(hepatitis_b, light_colored_poop).
+symptom(hepatitis_b, fever).
+symptom(hepatitis_b, fatigue).
+symptom(hepatitis_b, loss_of_appetite).
+symptom(hepatitis_b, nausea).
+symptom(hepatitis_b, vomiting).
+symptom(hepatitis_b, belly_pain).
+
+
+
+
 
 
 

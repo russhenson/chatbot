@@ -1,6 +1,9 @@
 :- include('kb.pl').
+%idk if that include works haha
+
 yes_ans(yes).
 no_ans(no).
+
 
 start :-
     write('Hello! I am Dr.Bot, your medical chatbot assistant.'),
@@ -19,3 +22,4 @@ not_emergency :-
 
 emergency :-
     write('What is your symptom?').
+
