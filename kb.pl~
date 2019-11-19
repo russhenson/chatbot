@@ -33,6 +33,85 @@ symptom(dengue_fever, vomiting).
 symptom(dengue_fever, bleeding_nose_and_gums).
 symptom(dengue_fever, bruising_on_skin).
 
+symptom(chickenpox, red_bumps).
+symptom(chickenpox, blisters).
+symptom(chickenpox, scabs).
+
+symptom(leptospirosis, high_fever).
+symptom(leptospirosis, headache).
+symptom(leptospirosis, chills).
+symptom(leptospirosis, muscle_aches).
+symptom(leptospirosis, vomiting).
+symptom(leptospirosis, yellow_skin).
+symptom(leptospirosis, red_eyes).
+symptom(leptospirosis, abdominal_pain).
+symptom(leptospirosis, diarrhea).
+symptom(leptospirosis, skin_rash).
+
+symptom(asthma, shortness_of_breath).
+symptom(asthma, chest_pain).
+symptom(asthma, coughing).
+symptom(asthma, wheezing).
+
+symptom(influenza, high_fever).
+symptom(influenza, headache).
+symptom(influenza, muscle_pain).
+symptom(influenza, coughing).
+symptom(influenza, chills).
+symptom(influenza, sore_throat).
+symptom(influenza, nasal_congestion).
+symptom(influenza, runny_nose).
+symptom(influenza, fatigue).
+symptom(influenza, nausea).
+symptom(influenza, vomiting).
+symptom(influenza, diarrhea).
+
+symptom(pneumonia, chest_pain).
+symptom(pneumonia, confusion).
+symptom(pneumonia, coughing).
+symptom(pneumonia, fatigue).
+symptom(pneumonia, fever).
+symptom(pneumonia, lower_body_temperature).
+symptom(pneumonia, nausea).
+symptom(pneumonia, vomiting).
+symptom(pneumonia, diarrhea).
+symptom(pneumonia, shortness_of_breath).
+
+symptom(measles, fever).
+symptom(measles, dry_cough).
+symptom(measles, runny_nose).
+symptom(measles, sore_throat).
+symptom(measles, inflamed_eyes).
+symptom(measles, kopliks_spots).
+symptom(measles, skin_rash).
+
+symptom(sore_eyes, red_eyes).
+symptom(sore_eyes, stinging_eyes).
+symptom(sore_eyes, itchy_eyes).
+symptom(sore_eyes, blurry_vision).
+symptom(sore_eyes, tearing).
+symptom(sore_eyes, photophobia).
+symptom(sore_eyes, discharge_from_eye).
+symptom(sore_eyes, foreign_body_sensation).
+
+symptom(tuberculosis, coughing).
+symptom(tuberculosis, weight_loss).
+symptom(tuberculosis, loss_of_appetite).
+symptom(tuberculosis, coughing_with_blood).
+symptom(tuberculosis, fatigue).
+symptom(tuberculosis, fever).
+symptom(tuberculosis, night_sweats).
+
+
+
+
+
+
+
+
+
+
+
 
 
 

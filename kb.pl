@@ -11,8 +11,8 @@ disease(tuberculosis).
 disease(rabies).
 disease(cholera).
 disease(athletes_foot).
-disease(heat_stroke).
-disease(hepatitis).
+disease(hepatits_a).
+disease(hepatitis_b).
 
 
 symptom(malaria, shaking_chills).
@@ -46,7 +46,7 @@ symptom(leptospirosis, yellow_skin).
 symptom(leptospirosis, red_eyes).
 symptom(leptospirosis, abdominal_pain).
 symptom(leptospirosis, diarrhea).
-symptom(leptospirosis, rash).
+symptom(leptospirosis, skin_rash).
 
 symptom(asthma, shortness_of_breath).
 symptom(asthma, chest_pain).
@@ -65,6 +65,98 @@ symptom(influenza, fatigue).
 symptom(influenza, nausea).
 symptom(influenza, vomiting).
 symptom(influenza, diarrhea).
+
+symptom(pneumonia, chest_pain).
+symptom(pneumonia, confusion).
+symptom(pneumonia, coughing).
+symptom(pneumonia, fatigue).
+symptom(pneumonia, fever).
+symptom(pneumonia, lower_body_temperature).
+symptom(pneumonia, nausea).
+symptom(pneumonia, vomiting).
+symptom(pneumonia, diarrhea).
+symptom(pneumonia, shortness_of_breath).
+
+symptom(measles, fever).
+symptom(measles, dry_cough).
+symptom(measles, runny_nose).
+symptom(measles, sore_throat).
+symptom(measles, inflamed_eyes).
+symptom(measles, kopliks_spots).
+symptom(measles, skin_rash).
+
+symptom(sore_eyes, red_eyes).
+symptom(sore_eyes, stinging_eyes).
+symptom(sore_eyes, itchy_eyes).
+symptom(sore_eyes, blurry_vision).
+symptom(sore_eyes, tearing).
+symptom(sore_eyes, photophobia).
+symptom(sore_eyes, discharge_from_eye).
+symptom(sore_eyes, foreign_body_sensation).
+
+symptom(tuberculosis, coughing).
+symptom(tuberculosis, weight_loss).
+symptom(tuberculosis, loss_of_appetite).
+symptom(tuberculosis, coughing_with_blood).
+symptom(tuberculosis, fatigue).
+symptom(tuberculosis, fever).
+symptom(tuberculosis, night_sweats).
+
+symptom(rabies, fever).
+symptom(rabies, headache).
+symptom(rabies, nausea).
+symptom(rabies, vomiting).
+symptom(rabies, agitation).
+symptom(rabies, anxiety).
+symptom(rabies, confusion).
+symptom(rabies, hyperactivity).
+symptom(rabies, difficulty_swallowing).
+symptom(rabies, excessive_salivation).
+symptom(rabies, fear_from_drinking_fluids).
+symptom(rabies, hallucinations).
+symptom(rabies, insomnia).
+symptom(rabies, partial_paralysis).
+
+symptom(cholera, diarrhea).
+symptom(cholera, vomiting).
+symptom(cholera, rapid_dehydration).
+symptom(cholera, dry_tongue).
+symptom(cholera, thirsty).
+symptom(cholera, blood_pressure_falls).
+symptom(cholera, faint_pulse).
+symptom(cholera, muscular_cramps).
+symptom(cholera, hollow_and_sunken_eyes).
+symptom(cholera, wrinkled_skin).
+symptom(cholera, fever).
+symptom(cholera, lethargy).
+symptom(cholera, seizures).
+
+symptom(athletes_foot, red_rash_between_toes).
+symptom(athletes_foot, itchy_feet).
+symptom(athletes_foot, blisters).
+symptom(athletes_foot, dryness).
+symptom(athletes_foot, scaling).
+
+symptom(hepatitis_a, fatigue).
+symptom(hepatitis_a, low_appetite).
+symptom(hepatitis_a, stomach_pain).
+symptom(hepatitis_a, nausea).
+symptom(hepatitis_a, yellow_skin).
+
+symptom(hepatitis_b, yellow_skin).
+symptom(hepatitis_b, light_colored_poop).
+symptom(hepatitis_b, fever).
+symptom(hepatitis_b, fatigue).
+symptom(hepatitis_b, loss_of_appetite).
+symptom(hepatitis_b, nausea).
+symptom(hepatitis_b, vomiting).
+symptom(hepatitis_b, belly_pain).
+
+
+
+
+
+
 
 
 
