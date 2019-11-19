@@ -7,10 +7,12 @@ start :-
     write('What is your name? '),
     read(Name), nl,
     format('Hi, ~w!~n', [Name]),
-    write('Is this an emergency? (yes or no) ~n '),
+    write('Is this an emergency? (yes or no)'),
     read(Answer), nl, no_ans(Y),
     Answer=@=Y,nl,not_emergency;
     emergency.
+
+:- include('kb.pl').
 
 
 not_emergency :-
