@@ -1,5 +1,5 @@
-disease('Malaria').
-disease('Dengue Fever').
+disease(malaria).
+disease(dengue_fever).
 disease(chickenpox).
 disease(leptospirosis).
 disease(asthma).
@@ -14,8 +14,15 @@ disease(athletes_foot).
 disease(heat_stroke).
 disease(hepatitis).
 
-diseaselist(Diseases) :-
-    disease(Diseases).
+
+symptom(malaria, shaking_chills).
+symptom(malaria, high_fever).
+symptom(malaria, profuse_sweating).
+symptom(malaria, headache).
+symptom(malaria, nausea).
+symptom(malaria, vomiting).
+
+
 
 
 

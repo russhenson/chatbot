@@ -14,8 +14,6 @@ start :-
     emergency.
 
 
-
-
 not_emergency :-
     write('Please refer to a large medical facility.').
 

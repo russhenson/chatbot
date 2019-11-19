@@ -1,3 +1,4 @@
+:- include('kb.pl').
 yes_ans(yes).
 no_ans(no).
 
@@ -12,7 +13,7 @@ start :-
     Answer=@=Y,nl,not_emergency;
     emergency.
 
-:- include('kb.pl').
+
 
 
 not_emergency :-
