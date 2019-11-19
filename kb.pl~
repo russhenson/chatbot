@@ -22,6 +22,16 @@ symptom(malaria, headache).
 symptom(malaria, nausea).
 symptom(malaria, vomiting).
 
+symptom(dengue_fever, high_fever).
+symptom(dengue_fever, headache).
+symptom(dengue_fever, swollen_lymph_glands).
+symptom(dengue_fever, muscle_pain).
+symptom(dengue_fever, joint_pain).
+symptom(dengue_fever, skin_rash).
+symptom(dengue_fever, nausea).
+symptom(dengue_fever, vomiting).
+symptom(dengue_fever, bleeding_nose_and_gums).
+symptom(dengue_fever, bruising_on_skin).
 
 
 
