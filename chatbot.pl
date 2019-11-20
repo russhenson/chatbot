@@ -1,4 +1,6 @@
 :- include('kb.pl').
+:- include('symptoms.pl').
+:- include('diseases.pl').
 
 yes_ans(yes).
 no_ans(no).
@@ -20,10 +22,8 @@ not_emergency :-
     write('Please refer to a large medical facility.').
 
 emergency :-
-    write('What is your symptom today?'),
-    nl,
-    read(Symptom),
-    symptom(Disease, Symptom),
-    write('You have '), write(Disease).
+    write('What is your symptom today?'), nl,
+    read(Symptom), nl,
+    format('okay so your symptom is ~w.~n', [Symptom]).
 
 

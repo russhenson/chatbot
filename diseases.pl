@@ -1,0 +1,15 @@
+disease(malaria).
+disease(dengue_fever).
+disease(chickenpox).
+disease(leptospirosis).
+disease(asthma).
+disease(influenza).
+disease(pneumonia).
+disease(measles).
+disease(sore_eyes).
+disease(tuberculosis).
+disease(rabies).
+disease(cholera).
+disease(athletes_foot).
+disease(hepatitis_a).
+disease(hepatitis_b).

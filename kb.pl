@@ -1,21 +1,6 @@
-disease(malaria).
-disease(dengue_fever).
-disease(chickenpox).
-disease(leptospirosis).
-disease(asthma).
-disease(influenza).
-disease(pneumonia).
-disease(measles).
-disease(sore_eyes).
-disease(tuberculosis).
-disease(rabies).
-disease(cholera).
-disease(athletes_foot).
-disease(hepatitis_a).
-disease(hepatitis_b).
 
 %cause of malaria
-cause(malaria, mosquite_bite).
+cause(disease(malaria), mosquite_bite).
 
 %cause of dengue fever
 cause(dengue_fever, mosquito_bite).
@@ -51,7 +36,7 @@ cause(hepatitis_a, contaminated_water).
 cause(hepatitis_b, hepa_b_infected_contact).
 
 %list of symptoms of malaria
-symptom(malaria, shaking_chills).
+symptom(disease(malaria), shaking_chills).
 symptom(malaria, high_fever).
 symptom(malaria, profuse_sweating).
 symptom(malaria, headache).
@@ -80,7 +65,7 @@ symptom(chickenpox, itchy_skin).
 symptom(leptospirosis, high_fever).
 symptom(leptospirosis, headache).
 symptom(leptospirosis, chills).
-symptom(leptospirosis, muscle_aches).
+symptom(leptospirosis, muscle_pain).
 symptom(leptospirosis, vomiting).
 symptom(leptospirosis, yellow_skin).
 symptom(leptospirosis, red_eyes).
@@ -201,7 +186,9 @@ symptom(hepatitis_b, fatigue).
 symptom(hepatitis_b, loss_of_appetite).
 symptom(hepatitis_b, nausea).
 symptom(hepatitis_b, vomiting).
-symptom(hepatitis_b, belly_pain).
+symptom(hepatitis_b, stomach_pain).
+
+
 
 
 

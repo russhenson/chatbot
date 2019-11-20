@@ -1,5 +1,6 @@
 :- include('kb.pl').
-%idk if that include works haha
+:- include('symptoms.pl').
+:- include('diseases.pl').
 
 yes_ans(yes).
 no_ans(no).
@@ -8,10 +9,10 @@ no_ans(no).
 start :-
     write('Hello! I am Dr.Bot, your medical chatbot assistant.'),
     nl,
-    write('What is your name? '),
+    write('What is your name? '), nl,
     read(Name), nl,
     format('Hi, ~w!~n', [Name]),
-    write('Is this an emergency? (yes or no)'),
+    write('Is this an emergency? (yes or no)'), nl,
     read(Answer), nl, no_ans(No),
     Answer=@=No,nl,not_emergency;
     emergency.
@@ -22,9 +23,7 @@ not_emergency :-
 
 emergency :-
     write('What is your symptom today?'),
-    nl,
-    read(Symptom),
-    symptom(Disease, Symptom),
-    write('You have '), write(Disease).
+    read(Symptom), nl,
+    format('okay so your symptom is ~w.~n', [Symptom]).
 
 
