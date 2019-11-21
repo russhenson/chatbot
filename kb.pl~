@@ -1,18 +1,3 @@
-disease(malaria).
-disease(dengue_fever).
-disease(chickenpox).
-disease(leptospirosis).
-disease(asthma).
-disease(influenza).
-disease(pneumonia).
-disease(measles).
-disease(sore_eyes).
-disease(tuberculosis).
-disease(rabies).
-disease(cholera).
-disease(athletes_foot).
-disease(hepatitis_a).
-disease(hepatitis_b).
 
 %cause of malaria
 cause(disease(malaria), mosquite_bite).
@@ -80,7 +65,7 @@ symptom(chickenpox, itchy_skin).
 symptom(leptospirosis, high_fever).
 symptom(leptospirosis, headache).
 symptom(leptospirosis, chills).
-symptom(leptospirosis, muscle_aches).
+symptom(leptospirosis, muscle_pain).
 symptom(leptospirosis, vomiting).
 symptom(leptospirosis, yellow_skin).
 symptom(leptospirosis, red_eyes).
@@ -201,7 +186,18 @@ symptom(hepatitis_b, fatigue).
 symptom(hepatitis_b, loss_of_appetite).
 symptom(hepatitis_b, nausea).
 symptom(hepatitis_b, vomiting).
-symptom(hepatitis_b, belly_pain).
+symptom(hepatitis_b, stomach_pain).
+
+
+malaria(X):- mosquito_bite(X), (shaking_chills(X); high_fever(X); sweating(X); headache(X); nausea(X)).
+
+tuberculosis(X):-
+    exposed_to_tb(X); smoking;
+    coughing(X); weight_loss(X); low_appetite(X); coughing_with_blood(X);
+    fatigue(X); fever(X); night_sweats(X).
+
+
+
 
 
 
