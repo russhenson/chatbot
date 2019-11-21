@@ -3,9 +3,10 @@ retract :-
     retract(shaking_chills(X)),
     retract(high_fever(X)),
     retract(sweating(X)),
-    retract(headache(X)).
-nausea(X).
-vomiting(X).
+    retract(headache(X)),
+    retract(coughing(X)),
+    retract(nausea(X)),
+    retract(vomiting(X)),
 swollen_lymph_glands(X).
 muscle_pain(X).
 joint_pain(X).

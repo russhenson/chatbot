@@ -2,8 +2,9 @@ retract :-
     retract(patient(X)),
     retract(shaking_chills(X)),
     retract(high_fever(X)),
-    retract(sweating(X)).
-headache(X).
+    retract(sweating(X)),
+    retract(headache(X)),
+    retract(coughing(X)),
 nausea(X).
 vomiting(X).
 swollen_lymph_glands(X).
