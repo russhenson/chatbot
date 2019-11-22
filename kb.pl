@@ -189,12 +189,18 @@ symptom(hepatitis_b, vomiting).
 symptom(hepatitis_b, stomach_pain).
 
 
+
+
+
 malaria(X):- mosquito_bite(X), (shaking_chills(X); high_fever(X); sweating(X); headache(X); nausea(X)).
 
 tuberculosis(X):-
-    coughing_with_blood(X); exposed_to_tb(X); smoking;
-    coughing(X); weight_loss(X); low_appetite(X);
-    fatigue(X); fever(X); night_sweats(X).
+    coughing_with_blood(X); night_sweats(X).
+
+
+%exposed_to_tb(X); smoking(X);
+%coughing(X); weight_loss(X); low_appetite(X);
+%fatigue(X); fever(X);
 
 
 

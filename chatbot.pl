@@ -78,11 +78,11 @@ queries :-
 
 %coughing symptom: tuberculosis, pneumonia, influenza, asthma
 cough_symptom :-
-    %patient(Name),
+    patient(Name),
     assert(coughing(Name)),
     write('Have you experienced coughing with blood?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(coughing_with_blood(Name)); %Tuberculosis
+    Answer=@='yes', assert(coughing_with_blood(Name)), idk; %Tuberculosis
     write('Do you have allergies?'), nl,
     read(Answer1), nl,
     Answer1=@='yes', assert(allergies(Name)); %asthma
@@ -94,7 +94,7 @@ cough_symptom :-
 %high fever: malaria, dengue fever, leptos, influenza
 high_fever_symptom :-
     %patient(Name),
-    assert(high_fever(Name)),
+    assert(high_fever(patient(Name))),
     write('Have you had recent contact with flood, water, or soil'),
     write(' while having an open wound?'), nl,
     read(Answer), nl,
@@ -352,10 +352,10 @@ smoking_symptom :-
 
 
 idk :-
-    write('hatdog'),
-    retractall/1.
+    write('hatdog').
 
-
-
-
+practice :-
+    write('enter name: '), nl,
+    read(Name),nl,
+    assert(night_sweats(Name)).
 
