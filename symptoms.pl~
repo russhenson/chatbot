@@ -1,7 +1,7 @@
 :- dynamic [night_sweats/1, coughing_with_blood/1, shaking_chills/1,
             high_fever/1, headache/1, swollen_lymph_glands/1,
             muscle_pain/1, joint_pain/1, skin_rash/1, bruising_skin/1,
-            nausea/1, vomiting/1, bleeding_nose_and_gums/1,
+            nausea/1, vomiting/1, bleeding_nose_and_gums/1, abdominal_pain/1,
             bruising_on_skin/1, red_bumps/1, blisters/1, exposed_to_tb/1,
             scabs/1, itchy_skin/1, chills/1, yellow_skin/1, open_wound/1,
             red_eyes/1, diarrhea/1, shortness_of_breath/1,

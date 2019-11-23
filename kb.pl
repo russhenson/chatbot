@@ -211,19 +211,59 @@ leptospirosis(X):-
      abdominal_pain(X); diarrhea(X); skin_rash(X)).
 
 asthma(X):-
-    (allergies(X); smoking(X); exercised(X); heartburn(X); sinusitis(X); took_medication(X); exposed_to_smoke(X)),
-            (shortness_of_breath(X); chest_pain(X); coughing(X); wheezing(X)).
+    allergies(X), (smoking(X); exercised(X); heartburn(X);
+                   sinusitis(X); exposed_to_smoke(X);
+                   shortness_of_breath(X); chest_pain(X);
+                   coughing(X); wheezing(X)).
 
+influenza(X):-
+    nasal_congestion(X), (high_fever(X); headache(X); muscle_pain(X);
+                          coughing(X); chills(X); sore_throat(X);
+                          runny_nose(X); fatigue(X); nausea(X);
+                          vomiting(X); diarrhea(X)).
+
+pneumonia(X):-
+    lower_body_temperature(X), (confusion(X); chest_pain(X); coughing(X);
+                                fatigue(X); fever(X); nausea(X); vomiting(X);
+                                diarrhea(X); shortness_of_breath(X)).
+
+measles(X):-
+    kopliks_spots(X), (fever(X); dry_cough(X); runny_nose(X); sore_throat(X);
+                       inflamed_eyes(X); skin_rash(X)).
+
+sore_eyes(X):-
+    red_eyes(X), (stinging_eyes(X); itchy_eyes(X); blurry_vision(X);
+                             tearing(X); photophobia(X); discharge_from_eye(X);
+                             foreign_body_sensation(X)).
 
 tuberculosis(X):-
-    coughing_with_blood(X); night_sweats(X).
+    coughing_with_blood(X), (night_sweats(X); exposed_to_tb(X); smoking(X);
+     coughing(X); weight_loss(X); low_appetite(X); fatigue(X); fever(X)).
 
+rabies(X):-
+    bitten_by_rabid_animal(X), (fever(X); headache(X); nausea(X); vomiting(X);
+                                agitation(X); anxiety(X); confusion(X);
+                                hyperactivity(X); difficulty_swallowing(X);
+                                excessive_salivation(X);
+                                fear_from_drinking_fluids(X); hallucinations(X);
+                                insomnia(X); partial_paralysis(X)).
 
-%exposed_to_tb(X); smoking(X);
-%coughing(X); weight_loss(X); low_appetite(X);
-%fatigue(X); fever(X);
+cholera(X):-
+    muscular_cramps(X), (diarrhea(X); vomiting(X); rapid_dehydration(X);
+                         dry_tongue(X); thirsty(X); blood_pressure_falls(X);
+                         faint_pulse(X); hollow_sunken_eyes(X); wrinkled_skin(X);
+                         fever(X); lethargy(X); seizures(X)).
 
+athletes_foot(X):-
+    red_rash_between_toes(X),(itchy_feet(X); blisters(X); dryness(X); scaling(X)).
 
+hepatitis_a(X):-
+    (yellow_skin(X); low_appetite(X)), (fatigue(X); stomach_pain(X); nausea(X)).
+
+hepatitis_b(X):-
+    (yellow_skin(X); light_colored_poop(X)); (fever(X); fatigue(X);
+                                              low_appetite(X); nausea(X);
+                                              vomiting(X); abdominal_pain(X)).
 
 
 

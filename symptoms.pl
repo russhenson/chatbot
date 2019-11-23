@@ -4,10 +4,10 @@
             nausea/1, vomiting/1, bleeding_nose_and_gums/1, abdominal_pain/1,
             bruising_on_skin/1, red_bumps/1, blisters/1, exposed_to_tb/1,
             scabs/1, itchy_skin/1, chills/1, yellow_skin/1, open_wound/1,
-            red_eyes/1, diarrhea/1, shortness_of_breath/1,
+            red_eyes/1, diarrhea/1, shortness_of_breath/1, stinging_eyes/1,
             chest_pain/1, coughing/1, wheezing/1, profuse_sweating/1,
             sore_throat/1, nasal_congestion/1, runny_nose/1, fatigue/1,
-            confusion/1, fever/1, lower_body_temperature/1,
+            confusion/1, fever/1, lower_body_temperature/1, hollow_sunken_eyes/1,
             dry_cough/1, runny_nose/1, inflamed_eyes/1,kopliks_spots/1,
             itchy_eyes/1, blurry_vision/1, tearing/1, photophobia/1,
             discharge_from_eye/1, foreign_body_sensation/1, weight_loss/1,
@@ -20,7 +20,8 @@
             lethargy/1, seizures/1, red_rash_between_toes/1, itchy_feet/1,
             dryness/1, scaling/1, low_appetite/1, stomach_pain/1,
             light_colored_poop/1, bitten_by_rabid_animal/1, smoking/1,
-            mosquito_bite/1, contaminated_water_contact/1, allergies/1].
+            mosquito_bite/1, contaminated_water_contact/1, allergies/1,
+            exercised/1, heartburn/1, sinusitis/1, exposed_to_smoke/1].
 
 
 symptom(high_fever).
