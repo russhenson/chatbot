@@ -193,19 +193,20 @@ symptom(hepatitis_b, stomach_pain).
 
 
 malaria(X):-
-    mosquito_bite(X), (shaking_chills(X); high_fever(X);
-                       profuse_sweating(X); headache(X); nausea(X)).
+    (mosquito_bite(X), profuse_sweating(X)), (high_fever(X); shaking_chills(X);
+                                              headache(X); nausea(X)).
 
 dengue_fever(X):-
-    mosquito_bite(X), (high_fever(X); headache(X); swollen_lymph_glands(X);
-                       muscle_pain(X); joint_pain(X); skin_rash(X); nausea(X);
-                       vomiting(X); bleeding_nose_and_gums(X); bruising_skin(X)).
+    (mosquito_bite(X), bruising_skin(X)), (high_fever(X); headache(X);
+                                          swollen_lymph_glands(X); muscle_pain(X);
+                                          joint_pain(X); skin_rash(X); nausea(X);
+                                          vomiting(X); bleeding_nose_and_gums(X)).
 
 chickenpox(X):-
     red_bumps(X); blisters(X); scabs(X); itchy_skin(X).
 
 leptospirosis(X):-
-    (open_wound(X), contaminated_water_contact(X));
+    (open_wound(X), contaminated_water_contact(X)),
     (high_fever(X); headache(X); chills(X); muscle_pain(X);
      vomiting(X); yellow_skin(X); red_eyes(X);
      abdominal_pain(X); diarrhea(X); skin_rash(X)).

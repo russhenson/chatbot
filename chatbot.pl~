@@ -1,7 +1,6 @@
 :- include('kb.pl').
 :- include('symptoms.pl').
 :- include('diseases.pl').
-:- include('retract.pl').
 
 
 start :-
@@ -81,16 +80,18 @@ cough_symptom(Name) :-
     assert(coughing(Name)),
     write('Have you experienced coughing with blood?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(coughing_with_blood(Name)), idk; %Tuberculosis
+    Answer=@='yes', assert(coughing_with_blood(Name)),
+    diagnosis(Name); %Tuberculosis
     write('Do you have allergies?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(allergies(Name)); %asthma
+    Answer1=@='yes', assert(allergies(Name)), diagnosis(Name); %asthma
     write('Do you have nasal congestion?'), nl,
     read(Answer2), nl,
-    Answer2=@='yes', assert(nasal_congestion(Name)); %influenza
+    Answer2=@='yes', assert(nasal_congestion(Name)), diagnosis(Name); %influenza
     write('Do you have lower body temperature than usual?'), nl,
     read(Answer3), nl,
-    Answer3=@='yes', assert(lower_body_temperature(Name)); %pneumonia
+    Answer3=@='yes', assert(lower_body_temperature(Name)),
+    diagnosis(Name); %pneumonia
     write('I am not familiar with your possible disease.'),!.
 
 %high fever: malaria, dengue fever, leptos, influenza
@@ -100,19 +101,19 @@ high_fever_symptom(Name) :-
     write(' while having an open wound?'), nl,
     read(Answer), nl,
     Answer=@='yes', assert(contaminated_water_contact(Name)),
-    assert(open_wound(Name)); %leptos
+    assert(open_wound(Name)), diagnosis(Name); %leptos
     write('Do you have nasal congestion?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(nasal_congestion(Name)); %influenza
+    Answer1=@='yes', assert(nasal_congestion(Name)), diagnosis(Name); %influenza
     write('Do you have mosquito bite?'), nl,
     read(Answer2), nl,
     Answer2=@='yes', nl, assert(mosquito_bite(Name)),
     write('Do you have sudden skin bruises?'), nl,
     read(Answer3), nl,
-    Answer3=@='yes', assert(bruising_on_skin(Name)); %dengue
+    Answer3=@='yes', assert(bruising_skin(Name)), diagnosis(Name); %dengue
     write('Do you sweat excessively?'), nl,
     read(Answer4), nl,
-    Answer4=@='yes', assert(profuse_sweating(Name));
+    Answer4=@='yes', assert(profuse_sweating(Name)), diagnosis(Name);
     write('I am not familiar with your possible disease.'),!. %malaria
 
 %fever: pneumonia, measles, tb, rabies, athlete's foot, hepa B
@@ -121,22 +122,24 @@ fever_symptom(Name) :-
     assert(fever(Name)),
     write('Do you have Kopliks spots - little spots inside the mouth?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(kopliks_spots(Name)); %measles
+    Answer=@='yes', assert(kopliks_spots(Name)), diagnosis(Name); %measles
     write('Have you had sudden weight loss?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(weight_loss(Name)); %tb
+    Answer1=@='yes', assert(weight_loss(Name)), diagnosis(Name); %tb
     write('Were you bitten by a rabid animal? like dog?'), nl,
     read(Answer2), nl,
-    Answer2=@='yes', assert(bitten_by_rabid_animal(Name));%rabies
+    Answer2=@='yes', assert(bitten_by_rabid_animal(Name)), diagnosis(Name);%rabies
     write('Do you have red rash between toes?'), nl,
     read(Answer3), nl,
-    Answer3=@='yes', assert(red_rash_between_toes(Name)); %athlete's foot
+    Answer3=@='yes', assert(red_rash_between_toes(Name)),
+    diagnosis(Name); %athlete's foot
     write('Do you have light colored poop?'), nl,
     read(Answer4), nl,
-    Answer4=@='yes', assert(light_colored_poop(Name)); %hepa B
+    Answer4=@='yes', assert(light_colored_poop(Name)), diagnosis(Name); %hepa B
     write('Do you have lower body temperature than usual?'), nl,
     read(Answer5), nl,
-    Answer5=@='yes', assert(lower_body_temperature(Name)); %pneumonia
+    Answer5=@='yes', assert(lower_body_temperature(Name)),
+    diagnosis(Name); %pneumonia
     write('I am not familiar with your possible disease.'),!.
 
 %nausea: malaria, dengue, influenza, pneumonia, rabies, hepa a, hepa b
@@ -145,28 +148,29 @@ nausea_symptom(Name) :-
     assert(nausea(Name)),
     write('Do you have nasal congestion?'), nl,
     read(Answer2), nl,
-    Answer2=@='yes', assert(nasal_congestion(Name)); %influenza
+    Answer2=@='yes', assert(nasal_congestion(Name)), diagnosis(Name); %influenza
     write('Were you bitten by a rabid animal? like dog?'), nl,
     read(Answer3), nl,
-    Answer3=@='yes', assert(bitten_by_rabid_animal(Name));%rabies
+    Answer3=@='yes', assert(bitten_by_rabid_animal(Name)), diagnosis(Name);%rabies
     write('Do you have light colored poop?'), nl,
     read(Answer4), nl,
-    Answer4=@='yes', assert(light_colored_poop(Name)); %hepa B
+    Answer4=@='yes', assert(light_colored_poop(Name)), diagnosis(Name); %hepa B
     write('Do you have low appetite?'), nl,
     read(Answer5), nl,
-    Answer5=@='yes', assert(low_appetite(Name)); %hepa a
+    Answer5=@='yes', assert(low_appetite(Name)), diagnosis(Name); %hepa a
     write('Do you have mosquito bite?'), nl,
     read(Answer6), nl,
     Answer6=@='yes', nl, assert(mosquito_bite(Name)),
     write('Do you have sudden skin bruises?'), nl,
     read(Answer7), nl,
-    Answer7=@='yes', assert(bruising_on_skin(Name)); %dengue
+    Answer7=@='yes', assert(bruising_skin(Name)), diagnosis(Name); %dengue
     write('Do you sweat excessively?'), nl,
     read(Answer8), nl,
-    Answer8=@='yes', assert(profuse_sweating(Name)); %malaria
+    Answer8=@='yes', assert(profuse_sweating(Name)), diagnosis(Name); %malaria
     write('Do you have lower body temperature than usual?'), nl,
     read(Answer9), nl,
-    Answer9=@='yes', assert(lower_body_temperature(Name)); %pneumonia
+    Answer9=@='yes', assert(lower_body_temperature(Name)),
+    diagnosis(Name); %pneumonia
     write('I am not familiar with your possible disease.'),!.
 
 % malaria: malaria, dengue, leptos, influenza, pneumonia, rabies,
@@ -175,33 +179,34 @@ vomiting_symptom(Name) :-
     assert(vomiting(Name)),
     write('Do you have lower body temperature than usual?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(lower_body_temperature(Name)); %pneumonia
+    Answer=@='yes', assert(lower_body_temperature(Name)),
+    diagnosis(Name); %pneumonia
     write('Have you had recent contact with flood, water, or soil'),
     write(' while having an open wound?'), nl,
     read(Answer1), nl,
     Answer1=@='yes', assert(contaminated_water_contact(Name)),
-    assert(open_wound(Name)); %leptos
+    assert(open_wound(Name)), diagnosis(Name); %leptos
     write('Do you have nasal congestion?'), nl,
     read(Answer2), nl,
-    Answer2=@='yes', assert(nasal_congestion(Name)); %influenza
+    Answer2=@='yes', assert(nasal_congestion(Name)), diagnosis(Name); %influenza
     write('Were you bitten by a rabid animal? like dog?'), nl,
     read(Answer3), nl,
-    Answer3=@='yes', assert(bitten_by_rabid_animal(Name));%rabies
+    Answer3=@='yes', assert(bitten_by_rabid_animal(Name)), diagnosis(Name);%rabies
     write('Are you having muscular cramps?'), nl,
     read(Answer4), nl,
-    Answer4=@='yes', assert(muscular_cramps(Name));%cholera
+    Answer4=@='yes', assert(muscular_cramps(Name)), diagnosis(Name);%cholera
     write('Do you have low appetite?'), nl,
     read(Answer5), nl,
-    Answer5=@='yes', assert(low_appetite(Name)); %hepa B
+    Answer5=@='yes', assert(low_appetite(Name)), diagnosis(Name); %hepa B
     write('Do you have mosquito bite?'), nl,
     read(Answer6), nl,
     Answer6=@='yes', nl, assert(mosquito_bite(Name)),
     write('Do you have sudden skin bruises?'), nl,
     read(Answer7), nl,
-    Answer7=@='yes', assert(bruising_on_skin(Name)); %dengue
+    Answer7=@='yes', assert(bruising_skin(Name)), diagnosis(Name); %dengue
     write('Do you sweat excessively?'), nl,
     read(Answer8), nl,
-    Answer8=@='yes', assert(profuse_sweating(Name));
+    Answer8=@='yes', assert(profuse_sweating(Name)), diagnosis(Name);
     write('I am not familiar with your possible disease.'),!. %malaria
 
 %headache: malaria, dengue, leptos, influenza, rabies
@@ -211,22 +216,22 @@ headache_symptom(Name) :-
     write(' while having an open wound?'), nl,
     read(Answer), nl,
     Answer=@='yes', assert(contaminated_water_contact(Name)),
-    assert(open_wound(Name)); %leptos
+    assert(open_wound(Name)), diagnosis(Name); %leptos
     write('Do you have nasal congestion?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(nasal_congestion(Name)); %influenza
+    Answer1=@='yes', assert(nasal_congestion(Name)), diagnosis(Name); %influenza
     write('Were you bitten by a rabid animal? like dog?'), nl,
     read(Answer2), nl,
-    Answer2=@='yes', assert(bitten_by_rabid_animal(Name));%rabies
+    Answer2=@='yes', assert(bitten_by_rabid_animal(Name)), diagnosis(Name);%rabies
     write('Do you have mosquito bite?'), nl,
     read(Answer3), nl,
     Answer3=@='yes', nl, assert(mosquito_bite(Name)),
     write('Do you have sudden skin bruises?'), nl,
     read(Answer4), nl,
-    Answer4=@='yes', assert(bruising_on_skin(Name)); %dengue
+    Answer4=@='yes', assert(bruising_skin(Name)), diagnosis(Name); %dengue
     write('Do you sweat excessively?'), nl,
     read(Answer5), nl,
-    Answer5=@='yes', assert(profuse_sweating(Name));
+    Answer5=@='yes', assert(profuse_sweating(Name)), diagnosis(Name);
     write('I am not familiar with your possible disease.'),!. %malaria
 
 %blisters: chickenpox, athletes foot
@@ -234,10 +239,11 @@ blisters_symptom(Name) :-
     assert(blisters(Name)),
     write('Do you have red rash between toes?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(red_rash_between_toes(Name)); %athlete's foot
+    Answer=@='yes', assert(red_rash_between_toes(Name)),
+    diagnosis(Name); %athlete's foot
     write('Do you have red bumps on any part of your body?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(red_bumps(Name)); %chickenpox
+    Answer1=@='yes', assert(red_bumps(Name)), diagnosis(Name); %chickenpox
     write('I am not familiar with your possible disease.'),!.
 
 %muscle pain: dengue, leptos, influenza
@@ -247,16 +253,16 @@ muscle_pain_symptom(Name) :-
     write(' while having an open wound?'), nl,
     read(Answer), nl,
     Answer=@='yes', assert(contaminated_water_contact(Name)),
-    assert(open_wound(Name)); %leptos
+    assert(open_wound(Name)), diagnosis(Name); %leptos
     write('Do you have nasal congestion?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(nasal_congestion(Name)); %influenza
+    Answer1=@='yes', assert(nasal_congestion(Name)), diagnosis(Name); %influenza
     write('Do you have mosquito bite?'), nl,
     read(Answer2), nl,
     Answer2=@='yes', nl, assert(mosquito_bite(Name)),
     write('Do you have sudden skin bruises?'), nl,
     read(Answer3), nl,
-    Answer3=@='yes', assert(bruising_on_skin(Name)); %dengue
+    Answer3=@='yes', assert(bruising_skin(Name)), diagnosis(Name); %dengue
     write('I am not familiar with your possible disease.'),!.
 
 %skin rash: dengue, leptos, measles
@@ -266,16 +272,16 @@ skin_rash_symptom(Name) :-
     write(' while having an open wound?'), nl,
     read(Answer), nl,
     Answer=@='yes', assert(contaminated_water_contact(Name)),
-    assert(open_wound(Name)); %leptos
+    assert(open_wound(Name)), diagnosis(Name); %leptos
     write('Do you have Kopliks spots - little spots inside the mouth?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(kopliks_spots(Name)); %measles
+    Answer1=@='yes', assert(kopliks_spots(Name)), diagnosis(Name); %measles
      write('Do you have mosquito bite?'), nl,
     read(Answer2), nl,
     Answer2=@='yes', nl, assert(mosquito_bite(Name)),
     write('Do you have sudden skin bruises?'), nl,
     read(Answer3), nl,
-    Answer3=@='yes', assert(bruising_on_skin(Name)); %dengue
+    Answer3=@='yes', assert(bruising_skin(Name)), diagnosis(Name); %dengue
     write('I am not familiar with your possible disease.'),!.
 
 %chills: leptos, influenza
@@ -285,10 +291,10 @@ chills_symptom(Name) :-
     write(' while having an open wound?'), nl,
     read(Answer), nl,
     Answer=@='yes', assert(contaminated_water_contact(Name)),
-    assert(open_wound(Name)); %leptos
+    assert(open_wound(Name)), diagnosis(Name); %leptos
     write('Do you have nasal congestion?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(nasal_congestion(Name)); %influenza
+    Answer1=@='yes', assert(nasal_congestion(Name)), diagnosis(Name); %influenza
     write('I am not familiar with your possible disease.'),!.
 
 %diarrhea: leptos, influenza, pneumonia, cholera
@@ -298,16 +304,17 @@ diarrhea_symptom(Name) :-
     write(' while having an open wound?'), nl,
     read(Answer), nl,
     Answer=@='yes', assert(contaminated_water_contact(Name)),
-    assert(open_wound(Name)); %leptos
+    assert(open_wound(Name)), diagnosis(Name); %leptos
     write('Do you have nasal congestion?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(nasal_congestion(Name)); %influenza
+    Answer1=@='yes', assert(nasal_congestion(Name)), diagnosis(Name); %influenza
     write('Do you have lower body temperature than usual?'), nl,
     read(Answer2), nl,
-    Answer2=@='yes', assert(lower_body_temperature(Name)); %pneumonia
+    Answer2=@='yes', assert(lower_body_temperature(Name)),
+    diagnosis(Name); %pneumonia
     write('Are you having muscular cramps?'), nl,
     read(Answer3), nl,
-    Answer3=@='yes', assert(muscular_cramps(Name));%cholera
+    Answer3=@='yes', assert(muscular_cramps(Name)), diagnosis(Name);%cholera
     write('I am not familiar with your possible disease.'),!.
 
 %yellow skin: leptos, hepa a, hepa b
@@ -317,95 +324,112 @@ yellow_skin_symptom(Name) :-
     write(' while having an open wound?'), nl,
     read(Answer), nl,
     Answer=@='yes', assert(contaminated_water_contact(Name)),
-    assert(open_wound(Name)); %leptos
+    assert(open_wound(Name)), diagnosis(Name); %leptos
     write('Do you have light colored poop?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(light_colored_poop(Name)); %hepa B
+    Answer1=@='yes', assert(light_colored_poop(Name)), diagnosis(Name); %hepa B
     write('Do you have low appetite?'), nl,
     read(Answer2), nl,
-    Answer2=@='yes', assert(low_appetite(Name)); %hepa a
+    Answer2=@='yes', assert(low_appetite(Name)), diagnosis(Name); %hepa a
     write('I am not familiar with your possible disease.'),!.
 
 %fatigue: influenza, pneumonia, tb, hepa a, hepa b
 fatigue_symptom(Name) :-
-    %patient(Name),
     assert(fatigue(Name)),
     write('Do you have nasal congestion?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(nasal_congestion(Name)); %influenza
+    Answer=@='yes', assert(nasal_congestion(Name)), diagnosis(Name); %influenza
     write('Do you have lower body temperature than usual?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(lower_body_temperature(Name)); %pneumonia
+    Answer1=@='yes', assert(lower_body_temperature(Name)),
+    diagnosis(Name); %pneumonia
     write('Have you experienced coughing with blood?'), nl,
     read(Answer2), nl,
-    Answer2=@='yes', assert(coughing_with_blood(Name)); %Tuberculosis
+    Answer2=@='yes', assert(coughing_with_blood(Name)),
+    diagnosis(Name); %Tuberculosis
     write('Do you have light colored poop?'), nl,
     read(Answer3), nl,
-    Answer3=@='yes', assert(light_colored_poop(Name)); %hepa B
+    Answer3=@='yes', assert(light_colored_poop(Name)), diagnosis(Name); %hepa B
     write('Do you have low appetite?'), nl,
     read(Answer4), nl,
-    Answer4=@='yes', assert(low_appetite(Name)); %hepa a
+    Answer4=@='yes', assert(low_appetite(Name)), diagnosis(Name); %hepa a
     write('I am not familiar with your possible disease.'),!.
 
 %confusion: pneumonia, rabies
 confusion_symptom(Name) :-
-    %patient(Name),
     assert(confusion(Name)),
     write('Were you bitten by a rabid animal? like dog?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(bitten_by_rabid_animal(Name));%rabies
+    Answer1=@='yes', assert(bitten_by_rabid_animal(Name)),
+    diagnosis(Name);%rabies
     write('Do you have lower body temperature than usual?'), nl,
     read(Answer2), nl,
-    Answer2=@='yes', assert(lower_body_temperature(Name)); %pneumonia
+    Answer2=@='yes', assert(lower_body_temperature(Name)),
+    diagnosis(Name); %pneumonia
     write('I am not familiar with your possible disease.'),!.
 
 %loss of appetite: tb, hepa B
 loss_of_appetite_symptom(Name) :-
-    %patient(Name),
     assert(loss_of_appetite(Name)),
     write('Have you experienced coughing with blood?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(coughing_with_blood(Name)); %Tuberculosis
+    Answer=@='yes', assert(coughing_with_blood(Name)),
+    diagnosis(Name); %Tuberculosis
     write('Do you have light colored poop?'), nl,
     read(Answer3), nl,
-    Answer3=@='yes', assert(light_colored_poop(Name)); %hepa B
+    Answer3=@='yes', assert(light_colored_poop(Name)), diagnosis(Name); %hepa B
     write('I am not familiar with your possible disease.'),!.
 
 %chest pain: asthma, pneumonia
 chest_pain_symptom(Name) :-
-    %patient(Name),
     assert(chest_pain(Name)),
     write('Do you have lower body temperature than usual?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(lower_body_temperature(Name)); %pneumonia
+    Answer=@='yes', assert(lower_body_temperature(Name)),
+    diagnosis(Name); %pneumonia
     write('Do you have allergies?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(allergies(Name)); %asthma
+    Answer1=@='yes', assert(allergies(Name)), diagnosis(Name); %asthma
     write('I am not familiar with your possible disease.'),!.
 
 %red eyes: leptos, sore eyes
 red_eyes_symptom(Name) :-
-    %patient(Name),
     assert(red_eyes(Name)),
     write('Have you had recent contact with flood, water, or soil'),
     write(' while having an open wound?'), nl,
     read(Answer), nl,
     Answer=@='yes', assert(contaminated_water_contact(Name)),
-    assert(open_wound(Name)); %leptos
+    assert(open_wound(Name)), diagnosis(Name); %leptos
     write('Are your eyes red?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(red_eyes(Name)); %sore eyes
+    Answer1=@='yes', assert(red_eyes(Name)), diagnosis(Name); %sore eyes
     write('I am not familiar with your possible disease.'),!.
 
 %smoking: tb, asthma
 smoking_symptom(Name) :-
-    %patient(Name),
     assert(loss_of_appetite(Name)),
     write('Have you experienced coughing with blood?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(coughing_with_blood(Name)); %Tuberculosis
+    Answer=@='yes', assert(coughing_with_blood(Name)), diagnosis(Name); %Tuberculosis
     write('Do you have allergies?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(allergies(Name)); %asthma
+    Answer1=@='yes', assert(allergies(Name)), diagnosis(Name) ; %asthma
     write('I am not familiar with your possible disease.'),!.
 
+
+diagnosis(Name) :-
+    (malaria(Name), write('You have Malaria.'));
+    (dengue_fever(Name), write('You have Dengue fever.'));
+    (chickenpox(Name), write('You have Chickenpox.'));
+    (leptospirosis(Name), write('You have Leptospirosis.'));
+    (asthma(Name), write('You have Asthma.');
+    (influenza(Name), write('You have Influenza.');
+    (pneumonia(Name), write('You have Pneumonia.');
+    (measles(Name), write('You have Measles.');
+    (sore_eyes(Name), write('You have Sore eyes.');
+    (tuberculosis(Name), write('You have Tuberculosis');
+    (rabies(Name), write('You have Rabies.');
+    (cholera(Name), write('You have Cholera.');
+    (athletes_foot, write('You have Athletes foot.');
+    (hepatitis_a, write('You have Hepatitis A.');
+    (hepatitis_b, write('You have Hepatitis B.').
