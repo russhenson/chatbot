@@ -19,7 +19,8 @@
             muscular_cramps/1, hollow_and_sunken_eyes/1, wrinkled_skin/1,
             lethargy/1, seizures/1, red_rash_between_toes/1, itchy_feet/1,
             dryness/1, scaling/1, low_appetite/1, stomach_pain/1,
-            light_colored_poop/1].
+            light_colored_poop/1, bitten_by_rabid_animal/1, smoking/1,
+            mosquito_bite/1, contaminated_water_contact/1, allergies/1].
 
 
 symptom(high_fever).

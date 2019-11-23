@@ -8,7 +8,7 @@ start :-
     write('Hello! I am Dr.Bot, your medical chatbot assistant.'),
     nl,
     write('What is your name? '), nl,
-    read(Name), nl, assert(patient(Name)),
+    read(Name), nl, assert(Name),
     format('Hi, ~w!~n', [Name]),
     write('Is this an emergency? (yes or no)'), nl,
     read(Answer), nl,
@@ -78,7 +78,7 @@ queries :-
 
 %coughing symptom: tuberculosis, pneumonia, influenza, asthma
 cough_symptom :-
-    patient(Name),
+  %  patient(Name),
     assert(coughing(Name)),
     write('Have you experienced coughing with blood?'), nl,
     read(Answer), nl,
@@ -94,11 +94,12 @@ cough_symptom :-
 %high fever: malaria, dengue fever, leptos, influenza
 high_fever_symptom :-
     %patient(Name),
-    assert(high_fever(patient(Name))),
+    assert(high_fever(Name)),
     write('Have you had recent contact with flood, water, or soil'),
     write(' while having an open wound?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(contaminated_water_contact(Name)); %leptos
+    Answer=@='yes', assert(contaminated_water_contact(Name)),
+    assert(open_wound(Name)); %leptos
     write('Do you have nasal congestion?'), nl,
     read(Answer1), nl,
     Answer1=@='yes', assert(nasal_congestion(Name)); %influenza
@@ -169,7 +170,8 @@ vomiting_symptom :-
     write('Have you had recent contact with flood, water, or soil'),
     write(' while having an open wound?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(contaminated_water_contact(Name)); %leptos
+    Answer1=@='yes', assert(contaminated_water_contact(Name)),
+    assert(open_wound(Name)); %leptos
     write('Do you have nasal congestion?'), nl,
     read(Answer2), nl,
     Answer2=@='yes', assert(nasal_congestion(Name)); %influenza
@@ -197,7 +199,8 @@ headache_symptom :-
     write('Have you had recent contact with flood, water, or soil'),
     write(' while having an open wound?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(contaminated_water_contact(Name)); %leptos
+    Answer=@='yes', assert(contaminated_water_contact(Name)),
+    assert(open_wound(Name)); %leptos
     write('Do you have nasal congestion?'), nl,
     read(Answer1), nl,
     Answer1=@='yes', assert(nasal_congestion(Name)); %influenza
@@ -228,7 +231,8 @@ muscle_pain_symptom :-
     write('Have you had recent contact with flood, water, or soil'),
     write(' while having an open wound?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(contaminated_water_contact(Name)); %leptos
+    Answer=@='yes', assert(contaminated_water_contact(Name)),
+    assert(open_wound(Name)); %leptos
     write('Do you have nasal congestion?'), nl,
     read(Answer1), nl,
     Answer1=@='yes', assert(nasal_congestion(Name)); %influenza
@@ -241,7 +245,8 @@ skin_rash_symptom :-
     write('Have you had recent contact with flood, water, or soil'),
     write(' while having an open wound?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(contaminated_water_contact(Name)); %leptos
+    Answer=@='yes', assert(contaminated_water_contact(Name)),
+    assert(open_wound(Name)); %leptos
     write('Do you have Kopliks spots - little spots inside the mouth?'), nl,
     read(Answer1), nl,
     Answer1=@='yes', assert(kopliks_spots(Name)); %measles
@@ -254,7 +259,8 @@ chills_symptom :-
     write('Have you had recent contact with flood, water, or soil'),
     write(' while having an open wound?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(contaminated_water_contact(Name)); %leptos
+    Answer=@='yes', assert(contaminated_water_contact(Name)),
+    assert(open_wound(Name)); %leptos
     idk. %conclude influenza
 
 %diarrhea: leptos, influenza, pneumonia, cholera
@@ -264,7 +270,8 @@ diarrhea_symptom :-
     write('Have you had recent contact with flood, water, or soil'),
     write(' while having an open wound?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(contaminated_water_contact(Name)); %leptos
+    Answer=@='yes', assert(contaminated_water_contact(Name)),
+    assert(open_wound(Name)); %leptos
     write('Do you have nasal congestion?'), nl,
     read(Answer1), nl,
     Answer1=@='yes', assert(nasal_congestion(Name)); %influenza
@@ -280,7 +287,8 @@ yellow_skin_symptom :-
     write('Have you had recent contact with flood, water, or soil'),
     write(' while having an open wound?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(contaminated_water_contact(Name)); %leptos
+    Answer=@='yes', assert(contaminated_water_contact(Name)),
+    assert(open_wound(Name)); %leptos
     write('Do you have light colored poop?'), nl,
     read(Answer1), nl,
     Answer1=@='yes', assert(light_colored_poop(Name)); %hepa B
@@ -338,7 +346,8 @@ red_eyes_symptom :-
     write('Have you had recent contact with flood, water, or soil'),
     write(' while having an open wound?'), nl,
     read(Answer), nl,
-    Answer=@='yes', assert(contaminated_water_contact(Name)); %leptos
+    Answer=@='yes', assert(contaminated_water_contact(Name)),
+    assert(open_wound(Name)); %leptos
     idk. %conclude sore eyes
 
 %smoking: tb, asthma
