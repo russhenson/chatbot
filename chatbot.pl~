@@ -1,6 +1,7 @@
 :- include('kb.pl').
 :- include('symptoms.pl').
 :- include('diseases.pl').
+:- include('retract.pl').
 
 
 start :-
@@ -422,14 +423,16 @@ diagnosis(Name) :-
     (dengue_fever(Name), write('You have Dengue fever.'));
     (chickenpox(Name), write('You have Chickenpox.'));
     (leptospirosis(Name), write('You have Leptospirosis.'));
-    (asthma(Name), write('You have Asthma.');
-    (influenza(Name), write('You have Influenza.');
-    (pneumonia(Name), write('You have Pneumonia.');
-    (measles(Name), write('You have Measles.');
-    (sore_eyes(Name), write('You have Sore eyes.');
-    (tuberculosis(Name), write('You have Tuberculosis');
-    (rabies(Name), write('You have Rabies.');
-    (cholera(Name), write('You have Cholera.');
-    (athletes_foot, write('You have Athletes foot.');
-    (hepatitis_a, write('You have Hepatitis A.');
-    (hepatitis_b, write('You have Hepatitis B.').
+    (asthma(Name), write('You have Asthma.'));
+    (influenza(Name), write('You have Influenza.'));
+    (pneumonia(Name), write('You have Pneumonia.'));
+    (measles(Name), write('You have Measles.'));
+    (sore_eyes(Name), write('You have Sore eyes.'));
+    (tuberculosis(Name), write('You have Tuberculosis'));
+    (rabies(Name), write('You have Rabies.'));
+    (cholera(Name), write('You have Cholera.'));
+    (athletes_foot(Name), write('You have Athletes foot.'));
+    (hepatitis_a(Name), write('You have Hepatitis A.'));
+    (hepatitis_b(Name), write('You have Hepatitis B.')).
+
+

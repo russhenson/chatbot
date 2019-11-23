@@ -433,3 +433,5 @@ diagnosis(Name) :-
     (athletes_foot(Name), write('You have Athletes foot.'));
     (hepatitis_a(Name), write('You have Hepatitis A.'));
     (hepatitis_b(Name), write('You have Hepatitis B.')).
+
+
