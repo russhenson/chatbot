@@ -4,6 +4,7 @@
 
 
 start :-
+    reset,
     write('Hello! I am Dr.Bot, your medical chatbot assistant.'),
     nl,
     write('What is your name? '), nl,
@@ -434,4 +435,49 @@ diagnosis(Name) :-
     (hepatitis_a(Name), write('You have Hepatitis A.'));
     (hepatitis_b(Name), write('You have Hepatitis B.')).
 
-
+reset :-
+    retractall(night_sweats(_)),retractall(coughing_with_blood(_)),
+    retractall(shaking_chills(_)),
+    retractall(high_fever(_)),retractall(headache(_)),retractall(swollen_lymph_glands(_)),
+    retractall(muscle_pain(_)),retractall(joint_pain(_)),retractall(skin_rash(_)),
+    retractall(bruising_skin(_)),
+    retractall(nausea(_)),retractall(vomiting(_)),retractall(bleeding_nose_and_gums(_)),
+    retractall(abdominal_pain(_)),
+    retractall(bruising_on_skin(_)),retractall(red_bumps(_)),retractall(blisters(_)),
+    retractall(exposed_to_tb(_)),
+    retractall(scabs(_)),retractall(itchy_skin(_)),retractall(chills(_)),
+    retractall(yellow_skin(_)),retractall(open_wound(_)),
+    retractall(red_eyes(_)),retractall(diarrhea(_)),retractall(shortness_of_breath(_)),
+    retractall(stinging_eyes(_)),
+    retractall(chest_pain(_)),retractall(wheezing(_)),retractall(profuse_sweating(_)),
+    retractall(sore_throat(_)),
+    retractall(nasal_congestion(_)),retractall(runny_nose(_)),retractall(fatigue(_)),
+    retractall(confusion(_)),retractall(fever(_)),retractall(lower_body_temperature(_)),
+    retractall(hollow_sunken_eyes(_)),
+    retractall(dry_cough(_)),retractall(runny_nose(_)),retractall(inflamed_eyes(_)),
+    retractall(kopliks_spots(_)),
+    retractall(itchy_eyes(_)),retractall(blurry_vision(_)),retractall(tearing(_)),
+    retractall(photophobia(_)),
+    retractall(discharge_from_eye(_)),retractall(foreign_body_sensation(_)),
+    retractall(weight_loss(_)),
+    retractall(loss_of_appetite(_)),retractall(headache(_)),retractall(agitation(_)),
+    retractall(anxiety(_)),
+    retractall(hyperactivity(_)),retractall(difficulty_swallowing(_)),
+    retractall(excessive_salivation(_)),
+    retractall(fear_from_drinking_fluids(_)),retractall(hallucinations(_)),
+    retractall(insomnia(_)),
+    retractall(partial_paralysis(_)),retractall(rapid_dehydration(_)),
+    retractall(dry_tongue(_)),
+    retractall(thirsty(_)),retractall(blood_pressure_falls(_)),retractall(faint_pulse(_)),
+    retractall(muscular_cramps(_)),retractall(hollow_and_sunken_eyes(_)),
+    retractall(wrinkled_skin(_)),
+    retractall(lethargy(_)),retractall(seizures(_)),retractall(red_rash_between_toes(_)),
+    retractall(itchy_feet(_)),
+    retractall(dryness(_)),retractall(scaling(_)),retractall(low_appetite(_)),
+    retractall(stomach_pain(_)),
+    retractall(light_colored_poop(_)),retractall(bitten_by_rabid_animal(_)),
+    retractall(smoking(_)),
+    retractall(mosquito_bite(_)),retractall(contaminated_water_contact(_)),
+    retractall(allergies(_)),
+    retractall(exercised(_)),retractall(heartburn(_)),retractall(sinusitis(_)),
+    retractall(exposed_to_smoke(_)).

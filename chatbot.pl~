@@ -1,7 +1,6 @@
 :- include('kb.pl').
 :- include('symptoms.pl').
 :- include('diseases.pl').
-:- include('retract.pl').
 
 
 start :-
