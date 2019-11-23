@@ -8,21 +8,21 @@ start :-
     write('Hello! I am Dr.Bot, your medical chatbot assistant.'),
     nl,
     write('What is your name? '), nl,
-    read(Name), nl, assert(Name),
+    read(Name), nl, assert(patient(Name)),
     format('Hi, ~w!~n', [Name]),
     write('Is this an emergency? (yes or no)'), nl,
     read(Answer), nl,
-    Answer=@='no',nl,not_emergency;
-    queries.
+    Answer=@='yes',nl, queries(Name);
+    not_emergency.
 
 
 
 not_emergency :-
     write('Please refer to a large medical facility.').
-queries :-
+queries(Name) :-
     write('Do you have a cough?'), nl,
     read(Answer), nl,
-    Answer=@='yes', nl, cough_symptom;
+    Answer=@='yes', nl, cough_symptom(Name);
     write('Do you have high fever?'), nl,
     read(Answer1), nl,
     Answer1=@='yes', nl, high_fever_symptom;
@@ -77,8 +77,8 @@ queries :-
     idk.
 
 %coughing symptom: tuberculosis, pneumonia, influenza, asthma
-cough_symptom :-
-    patient(Name),
+cough_symptom(Name) :-
+  %  patient(Name),
     assert(coughing(Name)),
     write('Have you experienced coughing with blood?'), nl,
     read(Answer), nl,
@@ -366,5 +366,8 @@ idk :-
 practice :-
     write('enter name: '), nl,
     read(Name),nl,
+    assertpatient(Name).
+
+assertpatient(Name):-
     assert(night_sweats(Name)).
 
