@@ -4,6 +4,7 @@
 
 
 start :-
+    reset,
     write('Hello! I am Dr.Bot, your medical chatbot assistant.'),
     nl,
     write('What is your name? '), nl,

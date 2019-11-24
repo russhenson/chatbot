@@ -401,9 +401,9 @@ red_eyes_symptom(Name) :-
     read(Answer), nl,
     Answer=@='yes', assert(contaminated_water_contact(Name)),
     assert(open_wound(Name)), diagnosis(Name); %leptos
-    write('Are your eyes red?'), nl,
+    write('Are your eyes itchy?'), nl,
     read(Answer1), nl,
-    Answer1=@='yes', assert(red_eyes(Name)), diagnosis(Name); %sore eyes
+    Answer1=@='yes', assert(itchy_eyes(Name)), diagnosis(Name); %sore eyes
     write('I am not familiar with your possible disease.'),!.
 
 %smoking: tb, asthma
@@ -421,6 +421,7 @@ smoking_symptom(Name) :-
 diagnosis(Name) :-
     (malaria(Name), write('You have Malaria.'));
     (dengue_fever(Name), write('You have Dengue fever.'));
+    (athletes_foot(Name), write('You have Athletes foot.'));
     (chickenpox(Name), write('You have Chickenpox.'));
     (leptospirosis(Name), write('You have Leptospirosis.'));
     (asthma(Name), write('You have Asthma.'));
@@ -431,7 +432,6 @@ diagnosis(Name) :-
     (tuberculosis(Name), write('You have Tuberculosis'));
     (rabies(Name), write('You have Rabies.'));
     (cholera(Name), write('You have Cholera.'));
-    (athletes_foot(Name), write('You have Athletes foot.'));
     (hepatitis_a(Name), write('You have Hepatitis A.'));
     (hepatitis_b(Name), write('You have Hepatitis B.')).
 
